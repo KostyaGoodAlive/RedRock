@@ -1,0 +1,358 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документ</title>
+</head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header-h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+.header-div1 {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+}
+
+.img1 {
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+}
+
+.div2 {
+    width: 80%;
+    height: 400px;
+    position: absolute;
+    top: 22%;
+    left: 10%;
+    color: #fff;
+    text-align: center;
+}
+
+.button1 {
+    width: 32%;
+    height: 90px;
+    background: #9b2d31c7;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 24px;
+    text-align: center;
+    padding: 0;
+    margin: 62px auto 0;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background: #fff;
+    color: #9b2d30;
+    transition: 1.5s;
+}
+
+.div-info {
+    width: 12%;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.div-info:hover {
+    color: #9b2d30;
+    transition: 0.5s;
+}
+
+.section1 {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.glaw1, .glaw2 {
+    width: 45%;
+    height: 700px;
+}
+
+.gl-h3 {
+    color: #9b2d30;
+    font-size: 25px;
+    margin: 30px 0 0 80px;
+}
+
+.gl-h1 {
+    font-size: 50px;
+    margin: 20px 0 0 80px;
+}
+
+.gl-p {
+    font-size: 18px;
+    margin: 40px 0 0 80px;
+}
+
+.gl2-slider {
+    position: relative;
+    width: 80%;
+    height: 300px;
+    margin-top: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.active {
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+/* Для мобільних пристроїв */
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 5px;
+  }
+
+  a {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Для дуже малих екранів */
+@media (max-width: 576px) {
+  a {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .img {
+    width: 40px;
+    height: 40px;
+  }
+}
+    @media (max-width: 768px) {
+  .section1 {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .glaw1, .glaw2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .gl-h1 {
+    font-size: 36px;
+    margin-left: 20px;
+  }
+
+  .gl-p {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .gl2-slider {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .div2 h1 {
+    font-size: 32px;
+  }
+
+  .button1 {
+    width: 80%;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .header-div1 {
+    height: 500px;
+  }
+
+  .img1 {
+    height: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gl-h1 {
+    font-size: 28px;
+  }
+
+  .gl-p {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .button1 {
+    width: 90%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .header-div1 {
+    height: 400px;
+  }
+
+  .img1 {
+    height: 400px;
+  }
+}
+</style>
+<body>
+<div class="box">
+    <header class="header-div1">
+        <div class="div2">
+            <h1 class="header-h1">Red Rock<br>Криворізький баскетбольний клуб</h1>
+            <button onclick="window.location.href='{% url 'contact_us' %}'" class="button1">Записатися на тренування
+            </button>
+
+        </div>
+        <img class="img1" src="{% static 'main_logo.jpg' %}" alt="Головний логотип">
+    </header>
+    <section class="section1">
+        <div class="glaw1">
+            <h3 class="gl-h3">Про нас</h3>
+            <h1 class="gl-h1">Історія Red Rock</h1>
+            <p class="gl-p">Ласкаво просимо до світу баскетбольного клубу
+                Red Rock!
+                Ми - молода та амбітна команда, яка присвячує
+                себе розвитку та просуванню баскетболу через
+                масовість. Наша мета - створити сильну та
+                конкурентоспроможну команду, а також
+                надихнути людей різного віку та здібностей
+                займатися цим захоплюючим видом спорту. Ми віримо, що баскетбол має величезний
+                потенціал, як інструмент для розвитку фізичних
+                та соціальних навичок, об'єднання спільноти та
+                досягнення видатних результатів. Приєднуйтеся до нас, і разом ми створимо
+                яскраві моменти та дозволимо баскетболу
+                запалити серця дітей!</p>
+            <h1 class="gl-h1">Цінності клубу</h1>
+            <p class="gl-p"><br>
+                Відповідальність - я виконую свої обов’язки
+                заради свого майбутнього і майбутнього клубу.<br>
+                Повага - я поважаю партнерів, тренерів,
+                суперників, вболівальників, суддів, організаторів. <br>
+                Лідерство - я проявлю кращі свої якості, щоб
+                повести команду вперед, підтримати партнерів,
+                бути прикладом. <br>
+                Зусилля - я зроблю все, що від мене залежить
+                на тренуваннях, під час ігор і поза майданчиком.<br>
+                Пристрасть - мій ентузіазм та енергію не
+                загасити.<br>
+                Чесність - чисте сумління, душевний спокій і
+                самоповага — це винагорода, яка варта того,
+                щоб бути чесним.</p>
+        </div>
+        <div class="glaw2">
+            <div class="gl2-slider">
+                <div class="slide active">
+                    <img src="{% static 'Win1.jpg' %}" alt="Зображення 1">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'Win2.jpg' %}" alt="Зображення 2">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'team.jpg' %}" alt="Зображення 3">
+                </div>
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+            <h1 class="gl-h1">Наші цілі</h1>
+            <p class="gl2-p">Стратегія залучення до баскетболу та активного життя дітей, незалежно від рівня таланту,
+                здібностей, настрою. Якщо дитині подобається баскетбол - вона має право ним займатись.<br>
+                Систематичне проведення турнирів, конкурсів, заходів для підтримання інтересу та мотивації у дитини.<br>
+                Формування змагальних команд і створення професійної команди з власних вихованців.
+
+            </p>
+        </div>
+    </section>
+</div>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    document.querySelector('.next').addEventListener('click', function() {
+        changeSlide(1);
+    });
+
+    document.querySelector('.prev').addEventListener('click', function() {
+        changeSlide(-1);
+    });
+
+    function changeSlide(direction) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        slides[currentSlide].classList.add('active');
+    }
+</script>
+{% endblock %}
+</body>
+</html>

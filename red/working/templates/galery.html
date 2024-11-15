@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item p {
+            padding: 10px;
+            text-align: center;
+            background: #f8f8f8;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="gallery">
+    {% for photo in photos %}
+    <div class="gallery-item">
+        <img src="{{ photo.image.url }}" alt="{{ photo.description }}">
+        <p>{{ photo.description }}</p>
+    </div>
+    {% empty %}
+    <p>Фото не знайдено.</p>
+    {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>
