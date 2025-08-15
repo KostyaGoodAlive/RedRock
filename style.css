@@ -20,11 +20,7 @@ header {
   margin: 20px 0;
 }
 
-@media (max-width: 768px) {
-    #locations .indicators {
-        display: none;
-    }
-}
+
 .locations-container {
   display: flex;
   flex-wrap: wrap;
@@ -595,7 +591,11 @@ header.active button.toggle-nav span{
         top: 305px;
     }
 }
-
+@media (max-width: 768px) {
+    #locations .indicators {
+        display: none;
+    }
+}
 /* Other styles */
 
 .loud{
@@ -3140,4 +3140,5 @@ text-decoration: none;
     gap: 50px;
 
 }
+
 
