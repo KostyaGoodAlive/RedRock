@@ -795,9 +795,7 @@ strong{
     margin: 0;
   }
 
-  li {
-    margin: 5px;
-  }
+
 
   a {
     font-size: 16px;
@@ -1527,9 +1525,6 @@ strong{
     margin: 0;
   }
 
-  li {
-    margin: 5px;
-  }
 
   a {
     font-size: 16px;
@@ -1916,7 +1911,7 @@ margin:0% 3%;
         font-size: 24px;
     }
     .main ul {
-        gap: 15px;
+        gap: 0px;
     }
     .main a {
         font-size: 14px;
@@ -1928,7 +1923,7 @@ margin:0% 3%;
         font-size: 20px;
     }
     .main ul {
-        gap: 10px;
+        gap: 0px;
     }
     .main a {
         font-size: 13px;
@@ -3141,6 +3136,7 @@ text-decoration: none;
     gap: 50px;
 
 }
+
 
 
 
