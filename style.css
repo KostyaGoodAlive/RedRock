@@ -1906,6 +1906,7 @@ margin:0% 3%;
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 320px;
     display: flex;
     gap: 20px; /* расстояние между ссылками */
 }
@@ -3140,5 +3141,6 @@ text-decoration: none;
     gap: 50px;
 
 }
+
 
 
