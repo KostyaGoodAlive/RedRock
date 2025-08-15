@@ -598,17 +598,14 @@ header.active button.toggle-nav span{
     text-transform: uppercase;
 }
 section{
-  padding: 3em;
+  padding: 1em;
 }
 
 strong{
   color: #93969c;
 }
 
-@media screen and (max-width: 600px){
-  section{
-    padding: 1.5em;
-  }
+
 }
 .header-h1 {
     margin: auto;
@@ -1333,17 +1330,14 @@ header.active button.toggle-nav span{
     text-transform: uppercase;
 }
 section{
-  padding: 3em;
+  padding: 1em;
 }
 
 strong{
   color: #93969c;
 }
 
-@media screen and (max-width: 600px){
-  section{
-    padding: 1.5em;
-  }
+
 }
 .header-h1 {
     margin: auto;
@@ -3140,4 +3134,5 @@ text-decoration: none;
 .carousel .list .item{
     display: flex;
     gap: 50px;
+
 }
